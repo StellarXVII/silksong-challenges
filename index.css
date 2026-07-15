@@ -1,0 +1,194 @@
+* {
+    transition: 0.3s all;
+    -webkit-user-drag: none;
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+#boss-container {
+    text-align: center;
+    align-content: center;
+    height: 100%;
+    display: inline-block;
+    width: 33.33%;
+    position: fixed;
+    background: black;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+img#boss-img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: drop-shadow(0px 0px 1px white);
+}
+
+h2#boss-text {
+    color: white;
+    font-size: 30px;
+    font-family: monospace;
+}
+
+#crest-container {
+    text-align: center;
+    /* align-content: center; */
+    height: 100%;
+    display: inline-block;
+    width: 33.33%;
+    position: fixed;
+    left: 33.33%;
+}
+
+#crest-container img {
+    /* max-width: 100%; */
+    /* max-height: 100%; */
+    position: absolute;
+    /* centering */
+    left: 50%;
+    /* centering */
+    transform: translateX(-50%);
+    /* centering */
+}
+
+.toolEquipOutline {
+    position: relative;
+    aspect-ratio: auto;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    width: 115%;
+    transform: translate(-50%, -50%);
+}
+
+div#toolBank {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 30px 100px 0 100px;
+    /* width: calc(12px + 41.2vh); */
+    width: 33%;
+    /* Takes up exactly half the parent */
+    box-sizing: border-box;
+    /* Ensures padding doesn't push the width past 50% */
+    /* height: 100vh; */
+    grid-auto-rows: max-content;
+    /* overflow-y: auto; */
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.toolImageContainer {
+    position: relative;
+    /* Establishes a positioning context for the absolute images */
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Forces the container to be a square */
+    overflow: hidden;
+    /* Prevents images from spilling out of the square boundaries */
+
+    background-color: black;
+    border-radius: 50%;
+}
+
+.toolImageContainer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Perfectly centers the images */
+}
+
+img.toolEquipOutline {
+    width: 85%;
+    /* height: 80%; */
+    /* aspect-ratio: inherit; */
+    /* object-fit: cover; */
+    /* Crops and scales to fill the square without distorting */
+    z-index: 1;
+    /* Sits behind the front image */
+    /* Optional: fades the background slightly to pop the foreground */
+}
+
+img.toolImage {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    z-index: 2;
+}
+
+#flex-container {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    align-items: center;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+
+div#toolBank::-webkit-scrollbar {
+    display: none;
+}
+
+div#controlBar {
+    position: fixed;
+    bottom: 0;
+    left: 33.33%;
+    width: 33.33vw;
+    height: 22%;
+    background: black;
+    border: solid white 3px;
+    border-bottom: none;
+    box-sizing: border-box;
+    padding: 0 40px;
+    z-index: 10;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+div#controlBar button {
+    border-radius: 0.6vw;
+    padding: 0.5em 1em;
+    height: fit-content;
+    width: 130px;
+    background-color: hsl(0, 0%, 35%);
+    color: white;
+    font-family: monospace;
+    font-size: 13px;
+    border: none;
+}
+
+div#controlBar button:hover {
+    background-color: hsl(0, 0%, 50%);
+}
+
+#controlBar div {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
