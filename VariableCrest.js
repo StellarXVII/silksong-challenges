@@ -2,7 +2,7 @@ class VariableCrest {
 
     static CREST_DATA = {
         "hunter": {
-            image: "/images/crests/hunter.png",
+            image: "/silksong-challenges/images/crests/hunter.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 262, 201),
@@ -24,7 +24,7 @@ class VariableCrest {
             }
         },
         "reaper": {
-            image: "/images/crests/reaper.png",
+            image: "/silksong-challenges/images/crests/reaper.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 263, 136),
@@ -46,7 +46,7 @@ class VariableCrest {
             }
         },
         "wanderer": {
-            image: "/images/crests/wanderer.png",
+            image: "/silksong-challenges/images/crests/wanderer.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 263, 78)
@@ -68,7 +68,7 @@ class VariableCrest {
             }
         },
         "beast": {
-            image: "/images/crests/beast.png",
+            image: "/silksong-challenges/images/crests/beast.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 263, 159),
@@ -88,7 +88,7 @@ class VariableCrest {
             }
         },
         "witch": {
-            image: "/images/crests/witch.png",
+            image: "/silksong-challenges/images/crests/witch.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 240, 136),
@@ -109,7 +109,7 @@ class VariableCrest {
             }
         },
         "architect": {
-            image: "/images/crests/architect.png",
+            image: "/silksong-challenges/images/crests/architect.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 263, 173),
@@ -130,7 +130,7 @@ class VariableCrest {
             }
         },
         "shaman": {
-            image: "/images/crests/shaman.png",
+            image: "/silksong-challenges/images/crests/shaman.png",
             slots: {
                 red: [],
                 blue: [
@@ -220,13 +220,13 @@ class VariableCrest {
                 setTimeout(() => {
                     if ([ToolSlot.RED, ToolSlot.WHITE].includes(type)) {
                         if (index == 0 && slotTypeCapacity > 1) {
-                            outline.src = "/images/" + type + "-outline-up.png";
+                            outline.src = "/silksong-challenges/images/" + type + "-outline-up.png";
                             outline.style.transform = "translate(-50%, calc(-50% - 4px))"; // is already -50%, -50%
                         } else if (index == 1 && slotTypeCapacity < 3) {
-                            outline.src = "/images/" + type + "-outline-down.png";
+                            outline.src = "/silksong-challenges/images/" + type + "-outline-down.png";
                             outline.style.transform = "translate(-50%, calc(-50% + 4px))"; // is already -50%, -50%
                         } else if (index == 2) {
-                            outline.src = "/images/" + type + "-outline-down.png";
+                            outline.src = "/silksong-challenges/images/" + type + "-outline-down.png";
                             outline.style.transform = "translate(-50%, calc(-50% + 4px))"; // is already -50%, -50%
                         }
                     }
@@ -255,7 +255,7 @@ class VariableCrest {
             outline.style.transform = "translate(-50%, -50%)"; // reset
 
             setTimeout(() => {
-                outline.src = "/images/" + type + "-outline.png";
+                outline.src = "/silksong-challenges/images/" + type + "-outline.png";
                 icon.style.top = placeholderRect.y + "px";
                 icon.style.left = placeholderRect.x + "px";
                 setTimeout(() => {

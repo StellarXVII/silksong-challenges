@@ -1,7 +1,7 @@
-const CREST_CHANGE_AUDIO = new Audio("/audio/UI crest change select.wav");
-const TOOL_EQUIP_AUDIO = new Audio("/audio/ui tool equip.wav");
-const SILK_SKILL_EQUIP_AUDIO = new Audio("/audio/ui tool equip white tool.wav");
-const BOSS_CHANGE_AUDIO = new Audio("/audio/ui map mode zoom out.wav");
+const CREST_CHANGE_AUDIO = new Audio("/silksong-challenges/audio/UI crest change select.wav");
+const TOOL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip.wav");
+const SILK_SKILL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip white tool.wav");
+const BOSS_CHANGE_AUDIO = new Audio("/silksong-challenges/audio/ui map mode zoom out.wav");
 
 [CREST_CHANGE_AUDIO, TOOL_EQUIP_AUDIO, SILK_SKILL_EQUIP_AUDIO, BOSS_CHANGE_AUDIO].forEach(e => e.load());
 
@@ -386,7 +386,7 @@ for (let toolColor of Object.keys(TOOL_DATA)) {
         toolImage.alt = tool;
         toolImage.classList.add("toolImage");
 
-        toolOutline.src = "/images/" + toolColor + "-outline.png";
+        toolOutline.src = "/silksong-challenges/images/" + toolColor + "-outline.png";
         toolOutline.alt = toolColor + " tool outline";
         toolOutline.classList.add("toolEquipOutline");
 
