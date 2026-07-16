@@ -1,7 +1,7 @@
-const CREST_CHANGE_AUDIO = new Audio("/silksong-challenges/audio/UI crest change select.wav");
-const TOOL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip.wav");
-const SILK_SKILL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip white tool.wav");
-const BOSS_CHANGE_AUDIO = new Audio("/silksong-challenges/audio/ui map mode zoom out.wav");
+const CREST_CHANGE_AUDIO = new Audio("/audio/UI crest change select.wav");
+const TOOL_EQUIP_AUDIO = new Audio("/audio/ui tool equip.wav");
+const SILK_SKILL_EQUIP_AUDIO = new Audio("/audio/ui tool equip white tool.wav");
+const BOSS_CHANGE_AUDIO = new Audio("/audio/ui map mode zoom out.wav");
 
 [CREST_CHANGE_AUDIO, TOOL_EQUIP_AUDIO, SILK_SKILL_EQUIP_AUDIO, BOSS_CHANGE_AUDIO].forEach(e => e.load());
 
@@ -386,7 +386,7 @@ for (let toolColor of Object.keys(TOOL_DATA)) {
         toolImage.alt = tool;
         toolImage.classList.add("toolImage");
 
-        toolOutline.src = "/silksong-challenges/images/" + toolColor + "-outline.png";
+        toolOutline.src = "/images/" + toolColor + "-outline.png";
         toolOutline.alt = toolColor + " tool outline";
         toolOutline.classList.add("toolEquipOutline");
 
@@ -452,9 +452,9 @@ Utility.qs("#randomCrest").addEventListener("click", () => {
 Utility.qs("#randomTools").addEventListener("click", () => {
 
     var delay = 0;
-    if (vCrest.full) {
+    if (!vCrest.empty) {
         vCrest.getAllEquipped().forEach(e => {
-            vCrest.unequip(e);
+            e && vCrest.unequip(e);
         })
         delay = 500;
     }
@@ -491,6 +491,18 @@ Utility.qs("#randomAll").addEventListener("click", e => {
     }, 750);
 });
 
+Utility.qs("#randomFill").addEventListener("click", e => {
+    var empty = { red: 0, blue: 0, yellow: 0, white: 0 };
+    for (let type of Object.keys(vCrest.slots)) {
+        empty[type] = getEmpty(vCrest.slots[type].slots);
+    }
+    for (let type of Object.keys(empty)) {
+        for (let i = 0; i < empty[type]; i++) {
+            equip(Utility.arrayRandom(TOOL_DATA[type]).name);
+        }
+    }
+})
+
 function arrayRandomMultiple(arr, n) {
     var temp = arr.slice();
     var res = [];
@@ -507,4 +519,12 @@ function arrayIsFull(arr) {
         if (!i)
             return false;
     return true;
+}
+
+function getEmpty(arr) {
+    var c = 0;
+    for (let i of arr)
+        if (!i)
+            c++;
+    return c;
 }

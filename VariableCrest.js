@@ -1,18 +1,8 @@
 class VariableCrest {
 
-    static TEMPLATES = {
-        "hunter": [2, 2, 2, 1],
-        "reaper": [2, 2, 2, 1],
-        "wanderer": [1, 2, 3, 1],
-        "beast": [2, 0, 2, 1],
-        "witch": [2, 3, 0, 1],
-        "architect": [3, 2, 2, 0],
-        "shaman": [0, 2, 0, 3]
-    }
-
     static CREST_DATA = {
         "hunter": {
-            image: "/silksong-challenges/images/crests/hunter.png",
+            image: "/images/crests/hunter.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 262, 201),
@@ -20,11 +10,13 @@ class VariableCrest {
                 ],
                 blue: [
                     new ToolSlot(ToolSlot.BLUE, 53, 335),
-                    new ToolSlot(ToolSlot.BLUE, 143, 429)
+                    new ToolSlot(ToolSlot.BLUE, 143, 429),
+                    new ToolSlot(ToolSlot.BLUE, -73, 250)
                 ],
                 yellow: [
                     new ToolSlot(ToolSlot.YELLOW, 475, 335),
-                    new ToolSlot(ToolSlot.YELLOW, 385, 430)
+                    new ToolSlot(ToolSlot.YELLOW, 385, 430),
+                    new ToolSlot(ToolSlot.YELLOW, -73, 406)
                 ],
                 white: [
                     new ToolSlot(ToolSlot.WHITE, 262, 347)
@@ -32,7 +24,7 @@ class VariableCrest {
             }
         },
         "reaper": {
-            image: "/silksong-challenges/images/crests/reaper.png",
+            image: "/images/crests/reaper.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 263, 136),
@@ -40,11 +32,13 @@ class VariableCrest {
                 ],
                 blue: [
                     new ToolSlot(ToolSlot.BLUE, 110, 217),
-                    new ToolSlot(ToolSlot.BLUE, 109, 376)
+                    new ToolSlot(ToolSlot.BLUE, 109, 376),
+                    new ToolSlot(ToolSlot.BLUE, -73, 250)
                 ],
                 yellow: [
                     new ToolSlot(ToolSlot.YELLOW, 419, 217),
-                    new ToolSlot(ToolSlot.YELLOW, 419, 377)
+                    new ToolSlot(ToolSlot.YELLOW, 419, 377),
+                    new ToolSlot(ToolSlot.YELLOW, -73, 406)
                 ],
                 white: [
                     new ToolSlot(ToolSlot.WHITE, 263, 295)
@@ -52,19 +46,21 @@ class VariableCrest {
             }
         },
         "wanderer": {
-            image: "/silksong-challenges/images/crests/wanderer.png",
+            image: "/images/crests/wanderer.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 263, 78)
                 ],
                 blue: [
                     new ToolSlot(ToolSlot.BLUE, 95, 143),
-                    new ToolSlot(ToolSlot.BLUE, 433, 143)
+                    new ToolSlot(ToolSlot.BLUE, 433, 143),
+                    new ToolSlot(ToolSlot.BLUE, -73, 250)
                 ],
                 yellow: [
                     new ToolSlot(ToolSlot.YELLOW, 75, 354),
                     new ToolSlot(ToolSlot.YELLOW, 263, 465),
-                    new ToolSlot(ToolSlot.YELLOW, 454, 354)
+                    new ToolSlot(ToolSlot.YELLOW, 454, 354),
+                    new ToolSlot(ToolSlot.YELLOW, -73, 406)
                 ],
                 white: [
                     new ToolSlot(ToolSlot.WHITE, 262, 239)
@@ -72,16 +68,19 @@ class VariableCrest {
             }
         },
         "beast": {
-            image: "/silksong-challenges/images/crests/beast.png",
+            image: "/images/crests/beast.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 263, 159),
                     new ToolSlot(ToolSlot.RED, 263, 434)
                 ],
-                blue: [],
+                blue: [
+                    new ToolSlot(ToolSlot.BLUE, -73, 250)
+                ],
                 yellow: [
                     new ToolSlot(ToolSlot.YELLOW, 134, 230),
-                    new ToolSlot(ToolSlot.YELLOW, 394, 230)
+                    new ToolSlot(ToolSlot.YELLOW, 394, 230),
+                    new ToolSlot(ToolSlot.YELLOW, -73, 406)
                 ],
                 white: [
                     new ToolSlot(ToolSlot.WHITE, 263, 302)
@@ -89,7 +88,7 @@ class VariableCrest {
             }
         },
         "witch": {
-            image: "/silksong-challenges/images/crests/witch.png",
+            image: "/images/crests/witch.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 240, 136),
@@ -98,16 +97,19 @@ class VariableCrest {
                 blue: [
                     new ToolSlot(ToolSlot.BLUE, 408, 234),
                     new ToolSlot(ToolSlot.BLUE, 102, 374),
-                    new ToolSlot(ToolSlot.BLUE, 427, 379)
+                    new ToolSlot(ToolSlot.BLUE, 427, 379),
+                    new ToolSlot(ToolSlot.BLUE, -73, 250)
                 ],
-                yellow: [],
+                yellow: [
+                    new ToolSlot(ToolSlot.YELLOW, -73, 406)
+                ],
                 white: [
                     new ToolSlot(ToolSlot.WHITE, 278, 316)
                 ]
             }
         },
         "architect": {
-            image: "/silksong-challenges/images/crests/architect.png",
+            image: "/images/crests/architect.png",
             slots: {
                 red: [
                     new ToolSlot(ToolSlot.RED, 263, 173),
@@ -116,24 +118,29 @@ class VariableCrest {
                 ],
                 blue: [
                     new ToolSlot(ToolSlot.BLUE, 72, 230),
-                    new ToolSlot(ToolSlot.BLUE, 146, 119)
+                    new ToolSlot(ToolSlot.BLUE, 146, 119),
+                    new ToolSlot(ToolSlot.BLUE, -73, 250)
                 ],
                 yellow: [
                     new ToolSlot(ToolSlot.YELLOW, 383, 119),
-                    new ToolSlot(ToolSlot.YELLOW, 456, 230)
+                    new ToolSlot(ToolSlot.YELLOW, 456, 230),
+                    new ToolSlot(ToolSlot.YELLOW, -73, 406)
                 ],
                 white: []
             }
         },
         "shaman": {
-            image: "/silksong-challenges/images/crests/shaman.png",
+            image: "/images/crests/shaman.png",
             slots: {
                 red: [],
                 blue: [
                     new ToolSlot(ToolSlot.BLUE, 119, 295),
-                    new ToolSlot(ToolSlot.BLUE, 415, 295)
+                    new ToolSlot(ToolSlot.BLUE, 415, 295),
+                    new ToolSlot(ToolSlot.BLUE, -73, 250)
                 ],
-                yellow: [],
+                yellow: [
+                    new ToolSlot(ToolSlot.YELLOW, -73, 406)
+                ],
                 white: [
                     new ToolSlot(ToolSlot.WHITE, 263, 157),
                     new ToolSlot(ToolSlot.WHITE, 263, 295),
@@ -142,6 +149,8 @@ class VariableCrest {
             }
         }
     }
+
+    static TEMPLATES = Object.assign({}, ...Object.keys(this.CREST_DATA).map(crest => ({ [crest]: Object.keys(this.CREST_DATA[crest].slots).map(e => this.CREST_DATA[crest].slots[e].length) })));
 
     constructor(name) {
         this.setCrest(name, false);
@@ -155,7 +164,7 @@ class VariableCrest {
                     this.unequip(tool.name);
 
         this.crest = name;
-        this.full = false;
+        this.empty = true;
         this.slots = {};
         [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = VariableCrest.TEMPLATES[name].map(e => ({ count: e, slots: new Array(e) }));
 
@@ -187,6 +196,8 @@ class VariableCrest {
 
             this.slots[type].slots[index] = tool;
 
+            this.empty = false;
+
 
             var icon = Utility.qs("#" + tool.toLowerCase().replaceAll(" ", "-").replaceAll("\'", ""));
             var outline = icon.querySelector(".toolEquipOutline");
@@ -209,24 +220,18 @@ class VariableCrest {
                 setTimeout(() => {
                     if ([ToolSlot.RED, ToolSlot.WHITE].includes(type)) {
                         if (index == 0 && slotTypeCapacity > 1) {
-                            outline.src = "/silksong-challenges/images/" + type + "-outline-up.png";
+                            outline.src = "/images/" + type + "-outline-up.png";
                             outline.style.transform = "translate(-50%, calc(-50% - 4px))"; // is already -50%, -50%
                         } else if (index == 1 && slotTypeCapacity < 3) {
-                            outline.src = "/silksong-challenges/images/" + type + "-outline-down.png";
+                            outline.src = "/images/" + type + "-outline-down.png";
                             outline.style.transform = "translate(-50%, calc(-50% + 4px))"; // is already -50%, -50%
                         } else if (index == 2) {
-                            outline.src = "/silksong-challenges/images/" + type + "-outline-down.png";
+                            outline.src = "/images/" + type + "-outline-down.png";
                             outline.style.transform = "translate(-50%, calc(-50% + 4px))"; // is already -50%, -50%
                         }
                     }
                 }, 250);
             }, 50);
-
-            if (arrayIsFull(this.slots[type].slots))
-                if (arrayIsFull(this.getAllEquipped()))
-                    this.full = true;
-                else this.full = false;
-            else this.full = false;
 
         } else alert(`Crest has no more empty ${type} slots!`);
     }
@@ -237,7 +242,11 @@ class VariableCrest {
         if (index == -1) { /* console.warn(tool + " is not equipped!"); */ }
         else {
             this.slots[type].slots[index] = null;
-            this.full = false;
+
+            if (-1 == this.getAllEquipped().findIndex(e => !!e))
+                this.empty = true;
+            else this.empty = false;
+
             var icon = Utility.qs("#" + tool.toLowerCase().replaceAll(" ", "-").replaceAll("\'", ""));
             var iconRect = icon.getBoundingClientRect();
             var placeholderRect = icon.parentElement.getBoundingClientRect();
@@ -246,7 +255,7 @@ class VariableCrest {
             outline.style.transform = "translate(-50%, -50%)"; // reset
 
             setTimeout(() => {
-                outline.src = "/silksong-challenges/images/" + type + "-outline.png";
+                outline.src = "/images/" + type + "-outline.png";
                 icon.style.top = placeholderRect.y + "px";
                 icon.style.left = placeholderRect.x + "px";
                 setTimeout(() => {
