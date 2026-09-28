@@ -452,7 +452,7 @@ Utility.qs("#randomCrest").addEventListener("click", () => {
 })
 
 function setCrestWithData(data) {
-    vCrest.setDataWithCrest(data);
+    vCrest.setCrestWithData(data);
 }
 
 
@@ -616,9 +616,10 @@ function customCrest() {
         }
     ));
 
-    console.log(results);
 
     const randomCrest = Utility.arrayRandom(results);
+
+    console.log(randomCrest)
 
     for (let i of keys) {
         data.slots[i].push(new ToolSlot(colorConstants[i], 0, 0));
