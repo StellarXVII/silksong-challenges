@@ -558,7 +558,7 @@ function customCrest() {
     }
 
     const colorConstants = { 'w': ToolSlot.WHITE, 'r': ToolSlot.RED, 'b': ToolSlot.BLUE, 'y': ToolSlot.YELLOW };
-    const fullColorNames = { r: "red", b: "blue":, y: "yellow", w: "white" }
+    const fullColorNames = { r: "red", b: "blue", y: "yellow", w: "white" }
     const keys = ['w', 'r', 'b', 'y'];
 	const values = [0, 1, 2, 3];
 
