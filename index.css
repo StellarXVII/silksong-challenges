@@ -1,6 +1,7 @@
 * {
     transition: 0.3s all;
     -webkit-user-drag: none;
+    font-family: monospace;
 }
 
 img {
@@ -44,7 +45,6 @@ img#boss-img {
 h2#boss-text {
     color: white;
     font-size: 30px;
-    font-family: monospace;
 }
 
 #crest-container {
@@ -193,12 +193,12 @@ div#controlBar button {
     border-radius: 0.6vw;
     padding: 0.5em 1em;
     height: fit-content;
-    width: 130px;
+    width: calc((100% - 20px) / 3);
     background-color: hsl(0, 0%, 35%);
     color: white;
-    font-family: monospace;
     font-size: 13px;
     border: none;
+    box-sizing: border-box;
 }
 
 div#controlBar button:hover {
@@ -211,4 +211,8 @@ div#controlBar button:hover {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+}
+
+label {
+    color: white;
 }

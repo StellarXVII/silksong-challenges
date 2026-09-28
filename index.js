@@ -1,3 +1,5 @@
+const SETTINGS = {STANDARD_CREST_TEMPLATES: true};
+
 const CREST_CHANGE_AUDIO = new Audio("/silksong-challenges/audio/UI crest change select.wav");
 const TOOL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip.wav");
 const SILK_SKILL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip white tool.wav");
@@ -417,8 +419,8 @@ for (let i of SILK_SKILLS) {
 }
 
 
-function setCrest(crest = "hunter") {
-    vCrest.setCrest(crest);
+function setCrestByName(crest = "hunter") {
+    vCrest.setCrestByName(crest);
 }
 
 function getCrest() {
@@ -446,8 +448,13 @@ Utility.qs("#randomCrest").addEventListener("click", () => {
     var temp = Object.keys(VariableCrest.CREST_DATA);
     if (changedCrest)
         temp.splice(temp.indexOf(vCrest.crest), 1);
-    setCrest(Utility.arrayRandom(temp));
+    setCrestByName(Utility.arrayRandom(temp));
 })
+
+function setCrestWithData(data) {
+    vCrest.setDataWithCrest(data);
+}
+
 
 Utility.qs("#randomTools").addEventListener("click", () => {
 
@@ -527,4 +534,95 @@ function getEmpty(arr) {
         if (!i)
             c++;
     return c;
+}
+
+Utility.qs("#standardCrestTemplateToggle").addEventListener("change", e=>{
+    SETTINGS.STANDARD_CREST_TEMPLATES = e.target.checked;
+})
+
+
+
+function customCrest() {
+    const data = {
+        image: "/silksong-challenges/images/crests/custom.png",
+        slots: {
+            red: [],
+            blue: [
+                new ToolSlot(ToolSlot.BLUE, -73, 250)
+            ],
+            yellow: [
+                new ToolSlot(ToolSlot.YELLOW, -73, 406)
+            ],
+            white: []
+        }
+    }
+
+
+    const keys = ['white', 'red', 'blue', 'yellow'];
+    const colorConstants = { 'white': ToolSlot.WHITE, 'red': ToolSlot.RED, 'blue': ToolSlot.BLUE, 'yellow': ToolSlot.YELLOW };
+    const values = [0, 1, 2, 3];
+
+    const toolCountScores = {
+        red: {
+            0: -1,
+            1: 1,
+            2: 2,
+            3: 3,
+        },
+        blue: {
+            0: -3,
+            1: 1,
+            2: 3,
+            3: 4,
+        },
+        yellow: {
+            0: 0,
+            1: 1,
+            2: 2,
+            3: 2.5,
+        },
+        white: {
+            0: -2,
+            1: 1,
+            2: 3,
+            3: 3,
+        }
+    };
+
+    var results = [];
+
+    function generateCombos(index, currentCombo) {
+        if (index === keys.length) {
+            results.push(Object.assign({}, currentCombo));
+            return;
+        }
+
+        for (let val of values) {
+            currentCombo[keys[index]] = val;
+            generateCombos(index + 1, currentCombo);
+        }
+    }
+
+    generateCombos(0, {});
+    results = results.filter(e => e.r + e.b + e.y + e.w > 4 && e.r + e.b + e.y + e.w < 8 && e.w + e.r <= 3);
+    results = results.map(e => Object.assign(e,
+        { t: e.w + e.r + e.b + e.y },
+        {
+            score:
+                toolCountScores.w[e.w] +
+                toolCountScores.r[e.r] +
+                toolCountScores.b[e.b] +
+                toolCountScores.y[e.y]
+        }
+    ));
+
+    console.log(results);
+
+    const randomCrest = Utility.arrayRandom(results);
+
+    for (let i of keys) {
+        data.slots[i].push(new ToolSlot(colorConstants[i], 0, 0));
+    }
+
+    return data;
 }
