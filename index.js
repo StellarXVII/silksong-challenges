@@ -498,17 +498,17 @@ Utility.qs("#randomAll").addEventListener("click", e => {
     }, 750);
 });
 
-Utility.qs("#randomFill").addEventListener("click", e => {
-    var empty = { red: 0, blue: 0, yellow: 0, white: 0 };
-    for (let type of Object.keys(vCrest.slots)) {
-        empty[type] = getEmpty(vCrest.slots[type].slots);
-    }
-    for (let type of Object.keys(empty)) {
-        for (let i = 0; i < empty[type]; i++) {
-            equip(Utility.arrayRandom(TOOL_DATA[type]).name);
-        }
-    }
-})
+// Utility.qs("#randomFill").addEventListener("click", e => {
+//     var empty = { red: 0, blue: 0, yellow: 0, white: 0 };
+//     for (let type of Object.keys(vCrest.slots)) {
+//         empty[type] = getEmpty(vCrest.slots[type].slots);
+//     }
+//     for (let type of Object.keys(empty)) {
+//         for (let i = 0; i < empty[type]; i++) {
+//             equip(Utility.arrayRandom(TOOL_DATA[type]).name);
+//         }
+//     }
+// })
 
 function arrayRandomMultiple(arr, n) {
     var temp = arr.slice();
@@ -557,64 +557,64 @@ function customCrest() {
         }
     }
 
+    const colorConstants = { 'w': ToolSlot.WHITE, 'r': ToolSlot.RED, 'b': ToolSlot.BLUE, 'y': ToolSlot.YELLOW };
+    const fullColorNames = { r: "red", b: "blue": y: "yellow", w: "white" }
+    const keys = ['w', 'r', 'b', 'y'];
+	const values = [0, 1, 2, 3];
 
-    const keys = ['white', 'red', 'blue', 'yellow'];
-    const colorConstants = { 'white': ToolSlot.WHITE, 'red': ToolSlot.RED, 'blue': ToolSlot.BLUE, 'yellow': ToolSlot.YELLOW };
-    const values = [0, 1, 2, 3];
+	const toolCountScores = {
+		r: {
+			0: -1,
+			1: 1,
+			2: 2,
+			3: 3,
+		},
+		b: {
+			0: -3,
+			1: 1,
+			2: 3,
+			3: 4,
+		},
+		y: {
+			0: 0,
+			1: 1,
+			2: 2,
+			3: 2.5,
+		},
+		w: {
+			0: -2,
+			1: 1,
+			2: 3,
+			3: 3,
+		}
+	};
 
-    const toolCountScores = {
-        red: {
-            0: -1,
-            1: 1,
-            2: 2,
-            3: 3,
-        },
-        blue: {
-            0: -3,
-            1: 1,
-            2: 3,
-            3: 4,
-        },
-        yellow: {
-            0: 0,
-            1: 1,
-            2: 2,
-            3: 2.5,
-        },
-        white: {
-            0: -2,
-            1: 1,
-            2: 3,
-            3: 3,
-        }
-    };
+	var results = [];
 
-    var results = [];
+	function generateCombos(index, currentCombo) {
+		if (index === keys.length) {
+			results.push(Object.assign({}, currentCombo));
+			return;
+		}
 
-    function generateCombos(index, currentCombo) {
-        if (index === keys.length) {
-            results.push(Object.assign({}, currentCombo));
-            return;
-        }
+		for (let val of values) {
+			currentCombo[keys[index]] = val;
+			generateCombos(index + 1, currentCombo);
+		}
+	}
 
-        for (let val of values) {
-            currentCombo[keys[index]] = val;
-            generateCombos(index + 1, currentCombo);
-        }
-    }
-
-    generateCombos(0, {});
-    results = results.filter(e => e.r + e.b + e.y + e.w > 4 && e.r + e.b + e.y + e.w < 8 && e.w + e.r <= 3);
-    results = results.map(e => Object.assign(e,
-        { t: e.w + e.r + e.b + e.y },
-        {
-            score:
-                toolCountScores.w[e.w] +
-                toolCountScores.r[e.r] +
-                toolCountScores.b[e.b] +
-                toolCountScores.y[e.y]
-        }
-    ));
+	generateCombos(0, {});
+	results = results.filter(e => e.r + e.b + e.y + e.w > 4 && e.r + e.b + e.y + e.w < 8 && e.w + e.r <= 3);
+	results = results.map(e => Object.assign(e,
+		{ t: e.w + e.r + e.b + e.y },
+		{
+			score:
+				toolCountScores.w[e.w] +
+				toolCountScores.r[e.r] +
+				toolCountScores.b[e.b] +
+				toolCountScores.y[e.y]
+		}
+	));
 
 
     const randomCrest = Utility.arrayRandom(results);
@@ -622,7 +622,7 @@ function customCrest() {
     console.log(randomCrest)
 
     for (let i of keys) {
-        data.slots[i].push(new ToolSlot(colorConstants[i], 0, 0));
+        data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], 0, 0));
     }
 
     return data;
