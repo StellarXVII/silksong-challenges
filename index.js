@@ -622,6 +622,7 @@ function customCrest() {
     console.log(randomCrest)
 
     for (let i of keys) {
+        console.log(fullColorNames[i], i, data.slots[fullColorNames[i]])
         data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], 0, 0));
     }
 
