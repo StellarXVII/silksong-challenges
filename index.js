@@ -667,7 +667,7 @@ function customCrest() {
                 else if (i == "b") slots_filled.b++;
                 else if (i == "y") slots_filled.y++;
                 
-                data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][slots_filled[i]]));
+                data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][slots_filled[i] - 1]));
             }
         }
     } catch (e) {
