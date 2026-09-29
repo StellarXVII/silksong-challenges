@@ -388,7 +388,7 @@ for (let toolColor of Object.keys(TOOL_DATA)) {
         toolImage.alt = tool;
         toolImage.classList.add("toolImage");
 
-        toolOutline.src = "/silksong-challenges/images/" + toolColor + "-outline.png";
+        toolOutline.src = "/silksong-challenges/images/outlines/" + toolColor + "-outline.png";
         toolOutline.alt = toolColor + " tool outline";
         toolOutline.classList.add("toolEquipOutline");
 
