@@ -679,6 +679,9 @@ function customCrest() {
                             console.log("received b")
                             coordinateIndex--;
                         } break;
+                        default: {
+                            console.log([i, x])
+                        } break;
                     }
                 } else console.log(randomCrest.r, randomCrest.w)
 
