@@ -153,10 +153,14 @@ class VariableCrest {
     static TEMPLATES = Object.assign({}, ...Object.keys(this.CREST_DATA).map(crest => ({ [crest]: Object.keys(this.CREST_DATA[crest].slots).map(e => this.CREST_DATA[crest].slots[e].length) })));
 
     constructor(name) {
+        this.custom = false;
+        this.customSet = {};
         this.setCrestByName(name, false);
     }
 
     setCrestByName(name, sound = true) {
+        this.custom = false;
+        this.customSet = {};
 
         if (this.slots)
             for (let i of Object.keys(TOOL_DATA))
@@ -176,6 +180,10 @@ class VariableCrest {
     }
 
     setCrestWithData(data, sound = true) {
+        this.custom = true;
+        this.customSet = data;
+
+        
         if (this.slots)
             for (let i of Object.keys(TOOL_DATA))
                 for (let tool of TOOL_DATA[i])
@@ -229,7 +237,7 @@ class VariableCrest {
 
             var crestRect = Utility.qs("#crest-img").getBoundingClientRect();
             var iconRect = icon.getBoundingClientRect();
-            var targetPos = VariableCrest.CREST_DATA[this.crest].slots[type][index];
+            var targetPos = (!this.custom ? VariableCrest.CREST_DATA[this.crest] : this.customSet).slots[type][index];
             alert("check 4")
 
             icon.style.transition = "none";

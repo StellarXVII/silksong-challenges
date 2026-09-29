@@ -421,6 +421,7 @@ for (let i of SILK_SKILLS) {
 
 function setCrestByName(crest = "hunter") {
     vCrest.setCrestByName(crest);
+    vCrest.custom = false;
 }
 
 function getCrest() {
