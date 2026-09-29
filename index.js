@@ -629,8 +629,8 @@ function customCrest() {
     const coords = {
         r: [
             [263, 173],
-            [263, 302],
-            [263, 435]
+            [263, 314],
+            [263, 453]
         ],
         b: [
             [0, 0],
@@ -644,8 +644,8 @@ function customCrest() {
         ],
         w: [
             [263, 173],
-            [263, 302],
-            [263, 435]
+            [263, 314],
+            [263, 453]
         ],
     }
 
@@ -672,14 +672,12 @@ function customCrest() {
 
                 // switching to match w/r/w order in that case
                 if (randomCrest.r == 2 && randomCrest.w == 1) {
-                    if (i == "r" && x == 1) {
-                        console.log("received a");
-                        coordinateIndex++;
-                    } else if (i == "w" && x == 0) {
-                        console.log("received b");
+                    if (i == "r" && x == 1) 
+                        coordinateIndex++; 
+                    else if (i == "w" && x == 0) 
                         coordinateIndex--;
-                    }
-                } else console.log(randomCrest.r, randomCrest.w)
+                    
+                
 
 
                 data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][coordinateIndex]));
