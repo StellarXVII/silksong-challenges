@@ -257,7 +257,7 @@ class VariableCrest {
                             outline.src = "/silksong-challenges/images/outlines/" + type + "-outline-up.png";
                             outline.style.transform = "translate(-50%, calc(-50% - 4px))"; // is already -50%, -50%
 
-                            if (collectiveCapacity == 1 || (type == ToolSlot.WHITE && slotTypeCapacity == 1)) {
+                            if (collectiveCapacity == 1 || (type == ToolSlot.WHITE && (slotTypeCapacity == 1 || slotTypeCapacity == 2 && collectiveCapacity == 3))) {
                                 outline.src = "/silksong-challenges/images/outlines/" + type + "-outline.png";
                                 outline.style.transform = "translate(-50%, -50%)"; // reset
                             }
