@@ -248,10 +248,6 @@ class VariableCrest {
                 icon.style.left = (crestRect.x /* - iconRect.x */ + targetPos.x - icon.clientWidth / 2) + "px";
                 setTimeout(() => {
                     if ([ToolSlot.RED, ToolSlot.WHITE].includes(type)) {
-                        switch (type) {
-                            case ToolSlot.RED: slotTypeCapacity += this.slots.white.slots.length; break;
-                            case ToolSlot.WHITE: slotTypeCapacity += this.slots.red.slots.length; break;
-                        }
 
                         console.log(type, index, slotTypeCapacity);
 
