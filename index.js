@@ -631,4 +631,8 @@ function customCrest() {
     return data;
 }
 
-alert(JSON.stringify(customCrest()));
+const exampleCustomCrest = customCrest();
+
+alert(JSON.stringify(exampleCustomCrest));
+
+setCrestWithData(exampleCustomCrest);
