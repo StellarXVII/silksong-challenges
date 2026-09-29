@@ -681,7 +681,7 @@ function customCrest() {
                 }
 
 
-                data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][]));
+                data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][coordinateIndex]));
             }
         }
 
