@@ -196,7 +196,7 @@ class VariableCrest {
         [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = Object.keys(data.slots).map(color => data.slots[color].length).map(e => ({ count: e, slots: new Array(e) }));
 
 
-        // alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white]));
+        alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white].map(e => e.count )));
 
         sound && (CREST_CHANGE_AUDIO.pause(), CREST_CHANGE_AUDIO.currentTime = 0, CREST_CHANGE_AUDIO.play());
         Utility.qs("#crest-img").src = "/silksong-challenges/images/crests/custom.png";
@@ -249,13 +249,13 @@ class VariableCrest {
                 setTimeout(() => {
                     if ([ToolSlot.RED, ToolSlot.WHITE].includes(type)) {
                         if (index == 0 && slotTypeCapacity > 1) {
-                            outline.src = "/silksong-challenges/images/" + type + "-outline-up.png";
+                            outline.src = "/silksong-challenges/images/outlines/" + type + "-outline-up.png";
                             outline.style.transform = "translate(-50%, calc(-50% - 4px))"; // is already -50%, -50%
                         } else if (index == 1 && slotTypeCapacity < 3) {
-                            outline.src = "/silksong-challenges/images/" + type + "-outline-down.png";
+                            outline.src = "/silksong-challenges/images/outlines/" + type + "-outline-down.png";
                             outline.style.transform = "translate(-50%, calc(-50% + 4px))"; // is already -50%, -50%
                         } else if (index == 2) {
-                            outline.src = "/silksong-challenges/images/" + type + "-outline-down.png";
+                            outline.src = "/silksong-challenges/images/outlines/" + type + "-outline-down.png";
                             outline.style.transform = "translate(-50%, calc(-50% + 4px))"; // is already -50%, -50%
                         }
                     }
@@ -284,7 +284,7 @@ class VariableCrest {
             outline.style.transform = "translate(-50%, -50%)"; // reset
 
             setTimeout(() => {
-                outline.src = "/silksong-challenges/images/" + type + "-outline.png";
+                outline.src = "/silksong-challenges/images/outlines/" + type + "-outline.png";
                 icon.style.top = placeholderRect.y + "px";
                 icon.style.left = placeholderRect.x + "px";
                 setTimeout(() => {
