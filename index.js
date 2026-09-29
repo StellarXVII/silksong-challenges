@@ -672,9 +672,11 @@ function customCrest() {
                 if (randomCrest.r == 2 && randomCrest.w == 1) {
                     switch ([i, x]) {
                         case ["r", 1]: {
+                            console.log("received a")
                             coordinateIndex++;
                         } break;
                         case ["w", 0]: {
+                            console.log("received b")
                             coordinateIndex--;
                         } break;
                     }
