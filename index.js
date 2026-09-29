@@ -564,7 +564,7 @@ function customCrest() {
 
     const colorConstants = { 'w': ToolSlot.WHITE, 'r': ToolSlot.RED, 'b': ToolSlot.BLUE, 'y': ToolSlot.YELLOW };
     const fullColorNames = { r: "red", b: "blue", y: "yellow", w: "white" }
-    const keys = ['w', 'r', 'b', 'y'];
+    const keys = ['r', 'b', 'y', 'w'];
 	const values = [0, 1, 2, 3];
 
 	const toolCountScores = {
@@ -667,15 +667,36 @@ function customCrest() {
                 else if (i == "b") slots_filled.b++;
                 else if (i == "y") slots_filled.y++;
                 
-                data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][slots_filled[i] - 1]));
+                var coordinateIndex = slots_filled[i] - 1;
+
+                if (randomCrest.r == 2 && randomCrest.w == 1) {
+                    switch ([i, x]) {
+                        case ["r", 1]: {
+                            coordinateIndex++;
+                        } break;
+                        case ["w", 0]: {
+                            coordinateIndex--;
+                        } break;
+                    }
+                }
+
+
+                data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][]));
             }
         }
+
     } catch (e) {
         alert("error a: " + e)
     }
 
     return data;
 }
+
+/* 
+if (randomCrest.r == 2 && randomCrest.w == 1) {
+    [data.slots.red[1]]
+} */
+
 
 const exampleCustomCrest = customCrest();
 
