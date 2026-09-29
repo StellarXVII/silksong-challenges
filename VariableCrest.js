@@ -252,7 +252,9 @@ class VariableCrest {
                             case ToolSlot.RED: slotTypeCapacity += this.slots.white.slots.length; break;
                             case ToolSlot.WHITE: slotTypeCapacity += this.slots.red.slots.length; break;
                         }
-                        
+
+                        console.log(type, index, slotTypeCapacity);
+
                         if (index == 0 && slotTypeCapacity >= 1) {
                             outline.src = "/silksong-challenges/images/outlines/" + type + "-outline-up.png";
                             outline.style.transform = "translate(-50%, calc(-50% - 4px))"; // is already -50%, -50%
