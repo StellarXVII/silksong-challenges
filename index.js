@@ -670,18 +670,12 @@ function customCrest() {
                 var coordinateIndex = slots_filled[i] - 1;
 
                 if (randomCrest.r == 2 && randomCrest.w == 1) {
-                    switch ([i, x]) {
-                        case ["r", 1]: {
-                            console.log("received a")
-                            coordinateIndex++;
-                        } break;
-                        case ["w", 0]: {
-                            console.log("received b")
-                            coordinateIndex--;
-                        } break;
-                        default: {
-                            console.log([i, x])
-                        } break;
+                    if (i == "r" && x == 1) {
+                        console.log("received a");
+                        coordinateIndex++;
+                    } else if (i == "w" && x == 0) {
+                        console.log("received b");
+                        coordinateIndex--;
                     }
                 } else console.log(randomCrest.r, randomCrest.w)
 
