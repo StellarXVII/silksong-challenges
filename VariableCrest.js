@@ -185,7 +185,7 @@ class VariableCrest {
         this.empty = true;
         this.slots = {};
 
-        [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = Object.keys(this.CREST_DATA[crest].slots).map(color => this.CREST_DATA[crest].slots[color].length).map(e => ({ count: e, slots: new Array(e) }));
+        [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = Object.keys(data.slots).map(color => data.slots[color].length).map(e => ({ count: e, slots: new Array(e) }));
 
         sound && (CREST_CHANGE_AUDIO.pause(), CREST_CHANGE_AUDIO.currentTime = 0, CREST_CHANGE_AUDIO.play());
         Utility.qs("#crest-img").src = "/silksong-challenges/images/crests/custom.png";
