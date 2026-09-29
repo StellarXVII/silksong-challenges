@@ -635,4 +635,8 @@ const exampleCustomCrest = customCrest();
 
 alert(JSON.stringify(exampleCustomCrest));
 
-setCrestWithData(exampleCustomCrest);
+try {
+    setCrestWithData(exampleCustomCrest);
+} catch (e) {
+    alert(e);
+}
