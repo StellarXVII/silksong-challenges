@@ -669,6 +669,8 @@ function customCrest() {
                 
                 var coordinateIndex = slots_filled[i] - 1;
 
+
+                // switching to match w/r/w order in that case
                 if (randomCrest.r == 2 && randomCrest.w == 1) {
                     if (i == "r" && x == 1) {
                         console.log("received a");

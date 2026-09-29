@@ -248,7 +248,7 @@ class VariableCrest {
                 icon.style.left = (crestRect.x /* - iconRect.x */ + targetPos.x - icon.clientWidth / 2) + "px";
                 setTimeout(() => {
                     if ([ToolSlot.RED, ToolSlot.WHITE].includes(type)) {
-                        if (index == 0 && slotTypeCapacity > 1) {
+                        if (index == 0 && slotTypeCapacity >= 1) {
                             outline.src = "/silksong-challenges/images/outlines/" + type + "-outline-up.png";
                             outline.style.transform = "translate(-50%, calc(-50% - 4px))"; // is already -50%, -50%
                         } else if (index == 1 && slotTypeCapacity < 3) {
