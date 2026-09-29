@@ -675,9 +675,8 @@ function customCrest() {
                     if (i == "r" && x == 1) 
                         coordinateIndex++; 
                     else if (i == "w" && x == 0) 
-                        coordinateIndex--;
-                    
-                
+                        coordinateIndex--;   
+                }
 
 
                 data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][coordinateIndex]));
