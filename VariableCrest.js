@@ -197,10 +197,15 @@ class VariableCrest {
     equip(tool) {
         var type = TOOL_TYPES[tool];
         var index = this.slots[type].slots.findIndex(e => !e);
+        alert("check 1")
         var slotTypeCapacity = this.slots[type].slots.length;
+        alert("check 2")
+
 
         if (index != -1 || (index == -1 && slotTypeCapacity == 1)) {
             if (this.slots[type].slots.includes(tool)) { return; }
+
+            alert("check 3")
 
             var audio = (type != ToolSlot.WHITE ? TOOL_EQUIP_AUDIO : SILK_SKILL_EQUIP_AUDIO);
             audio.pause();
@@ -210,6 +215,7 @@ class VariableCrest {
             if (index == -1 && slotTypeCapacity == 1) { // if only one to replace 
                 index = 0;
                 this.unequip(this.slots[type].slots[index]);
+                alert("check 3b")
             }
 
 
@@ -224,6 +230,7 @@ class VariableCrest {
             var crestRect = Utility.qs("#crest-img").getBoundingClientRect();
             var iconRect = icon.getBoundingClientRect();
             var targetPos = VariableCrest.CREST_DATA[this.crest].slots[type][index];
+            alert("check 4")
 
             icon.style.transition = "none";
             icon.style.position = "fixed";
