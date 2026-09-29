@@ -655,16 +655,23 @@ function customCrest() {
         y: 0,
         w: 0
     };
-
-    for (let i of keys) {
-        console.log(fullColorNames[i], i, data.slots[fullColorNames[i]]);
-        for (let x = 0; x < randomCrest[i]; x++) {
-            if (["r", "w"].includes(i)) slots_filled.r++, slots_filled.w++;
-            else if (i == "b") slots_filled.b++;
-            else if (i == "y") slots_filled.y++;
-            
-            data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], coords[i][slots_filled[i]]...));
+    
+    try {
+        for (let i of keys) {
+            console.log(fullColorNames[i], i, data.slots[fullColorNames[i]]);
+            for (let x = 0; x < randomCrest[i]; x++) {
+                if (["r", "w"].includes(i)) {
+                    slots_filled.r++;
+                    slots_filled.w++
+                } 
+                else if (i == "b") slots_filled.b++;
+                else if (i == "y") slots_filled.y++;
+                
+                data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], coords[i][slots_filled[i]]...));
+            }
         }
+    } catch (e) {
+        alert("error a: " + e)
     }
 
     return data;
