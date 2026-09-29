@@ -624,12 +624,46 @@ function customCrest() {
 
     const randomCrest = Utility.arrayRandom(results);
 
-    console.log(randomCrest)
+    console.log(randomCrest);
+
+    const coords = {
+        r: [
+            [263, 173],
+            [263, 302],
+            [263, 435]
+        ],
+        b: [
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ],
+        y: [
+            [50, 0],
+            [50, 0],
+            [50, 0]
+        ],
+        w: [
+            [263, 173],
+            [263, 302],
+            [263, 435]
+        ],
+    }
+
+    var slots_filled = {
+        r: 0,
+        b: 0,
+        y: 0,
+        w: 0
+    };
 
     for (let i of keys) {
         console.log(fullColorNames[i], i, data.slots[fullColorNames[i]]);
         for (let x = 0; x < randomCrest[i]; x++) {
-            data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], 0, 0));
+            if (["r", "w"].includes(i)) slots_filled.r++, slots_filled.w++;
+            else if (i == "b") slots_filled.b++;
+            else if (i == "y") slots_filled.y++;
+            
+            data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], coords[i][slots_filled[i]]...));
         }
     }
 
