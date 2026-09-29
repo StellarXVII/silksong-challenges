@@ -680,7 +680,7 @@ function customCrest() {
                             coordinateIndex--;
                         } break;
                     }
-                }
+                } else console.log(randomCrest.r, randomCrest.w)
 
 
                 data.slots[fullColorNames[i]].push(new ToolSlot(colorConstants[i], ...coords[i][coordinateIndex]));
