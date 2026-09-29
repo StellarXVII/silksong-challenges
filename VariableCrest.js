@@ -168,7 +168,7 @@ class VariableCrest {
         this.slots = {};
         [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = VariableCrest.TEMPLATES[name].map(e => ({ count: e, slots: new Array(e) }));
 
-        alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white]));
+        // alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white]));
 
         sound && (CREST_CHANGE_AUDIO.pause(), CREST_CHANGE_AUDIO.currentTime = 0, CREST_CHANGE_AUDIO.play());
         Utility.qs("#crest-img").src = VariableCrest.CREST_DATA[name].image;
@@ -188,7 +188,7 @@ class VariableCrest {
         [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = Object.keys(data.slots).map(color => data.slots[color].length).map(e => ({ count: e, slots: new Array(e) }));
 
 
-        alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white]));
+        // alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white]));
 
         sound && (CREST_CHANGE_AUDIO.pause(), CREST_CHANGE_AUDIO.currentTime = 0, CREST_CHANGE_AUDIO.play());
         Utility.qs("#crest-img").src = "/silksong-challenges/images/crests/custom.png";

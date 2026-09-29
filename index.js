@@ -430,8 +430,12 @@ function getCrest() {
 const vCrest = new VariableCrest("hunter");
 
 function equip(...tools) {
-    for (let i of tools) {
-        vCrest.equip(i);
+    try{
+        for (let i of tools) {
+            vCrest.equip(i);
+        }
+    } catch (e) {
+        alert("error in equip(): " + e)
     }
 }
 
