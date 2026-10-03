@@ -1,4 +1,6 @@
-const SETTINGS = {STANDARD_CREST_TEMPLATES: true};
+const SETTINGS = {
+    STANDARD_CREST_TEMPLATES: true
+};
 
 const CREST_CHANGE_AUDIO = new Audio("/silksong-challenges/audio/UI crest change select.wav");
 const TOOL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip.wav");
@@ -242,70 +244,237 @@ for (let i of Object.keys(BOSS_DATA)) {
 }
 
 const TOOL_DATA = {
-    white: [
-        { name: "Silk Spear", chance: 3 },
-        { name: "Thread Storm", chance: 2 },
-        { name: "Sharpdart", chance: 1 },
-        { name: "Rune Rage", chance: 3 },
-        { name: "Cross Stitch", chance: 3 },
-        { name: "Pale Nails", chance: 2 }
+    white: [{
+            name: "Silk Spear",
+            chance: 3
+        },
+        {
+            name: "Thread Storm",
+            chance: 2
+        },
+        {
+            name: "Sharpdart",
+            chance: 1
+        },
+        {
+            name: "Rune Rage",
+            chance: 3
+        },
+        {
+            name: "Cross Stitch",
+            chance: 3
+        },
+        {
+            name: "Pale Nails",
+            chance: 2
+        }
     ],
-    red: [
-        { name: "Straight Pin", chance: 1 },
-        { name: "Threefold Pin", chance: 1 },
-        { name: "Sting Shard", chance: 1 },
-        { name: "Tacks", chance: 1 },
-        { name: "Longpin", chance: 1 },
-        { name: "Curvesickle", chance: 1 },
-        { name: "Throwing Ring", chance: 1 },
-        { name: "Pimpillo", chance: 1 },
-        { name: "Conchcutter", chance: 1 },
-        { name: "Silkshot", chance: 1 },
-        { name: "Delver's Drill", chance: 1 },
-        { name: "Cogwork Wheel", chance: 1 },
-        { name: "Cogfly", chance: 1 },
-        { name: "Rosary Cannon", chance: 1 },
-        { name: "Voltvessels", chance: 1 },
-        { name: "Flintslate", chance: 1 },
-        { name: "Flea Brew", chance: 1 },
-        { name: "Plasmium Phial", chance: 1 }
+    red: [{
+            name: "Straight Pin",
+            chance: 1
+        },
+        {
+            name: "Threefold Pin",
+            chance: 1
+        },
+        {
+            name: "Sting Shard",
+            chance: 1
+        },
+        {
+            name: "Tacks",
+            chance: 1
+        },
+        {
+            name: "Longpin",
+            chance: 1
+        },
+        {
+            name: "Curvesickle",
+            chance: 1
+        },
+        {
+            name: "Throwing Ring",
+            chance: 1
+        },
+        {
+            name: "Pimpillo",
+            chance: 1
+        },
+        {
+            name: "Conchcutter",
+            chance: 1
+        },
+        {
+            name: "Silkshot",
+            chance: 1
+        },
+        {
+            name: "Delver's Drill",
+            chance: 1
+        },
+        {
+            name: "Cogwork Wheel",
+            chance: 1
+        },
+        {
+            name: "Cogfly",
+            chance: 1
+        },
+        {
+            name: "Rosary Cannon",
+            chance: 1
+        },
+        {
+            name: "Voltvessels",
+            chance: 1
+        },
+        {
+            name: "Flintslate",
+            chance: 1
+        },
+        {
+            name: "Flea Brew",
+            chance: 1
+        },
+        {
+            name: "Plasmium Phial",
+            chance: 1
+        }
     ],
-    blue: [
-        { name: "Druid's Eyes", chance: 1 },
-        { name: "Magma Bell", chance: 1 },
-        { name: "Warding Bell", chance: 1 },
-        { name: "Pollip Pouch", chance: 1 },
-        { name: "Fractured Mask", chance: 1 },
-        { name: "Multibinder", chance: 1 },
-        { name: "Weavelight", chance: 1 },
-        { name: "Sawtooth Circlet", chance: 1 },
-        { name: "Injector Band", chance: 1 },
-        { name: "Spool Extender", chance: 1 },
-        { name: "Reserve Bind", chance: 1 },
-        { name: "Claw Mirrors", chance: 1 },
-        { name: "Memory Crystal", chance: 1 },
-        { name: "Snitch Pick", chance: 1 },
-        { name: "Volt Filament", chance: 1 },
-        { name: "Quick Sling", chance: 1 },
-        { name: "Wreath of Purity", chance: 1 },
-        { name: "Longclaw", chance: 1 },
-        { name: "Wispfire Lantern", chance: 1 },
-        { name: "Egg of Flealia", chance: 1 },
-        { name: "Pin Badge", chance: 1 }
+    blue: [{
+            name: "Druid's Eyes",
+            chance: 1
+        },
+        {
+            name: "Magma Bell",
+            chance: 1
+        },
+        {
+            name: "Warding Bell",
+            chance: 1
+        },
+        {
+            name: "Pollip Pouch",
+            chance: 1
+        },
+        {
+            name: "Fractured Mask",
+            chance: 1
+        },
+        {
+            name: "Multibinder",
+            chance: 1
+        },
+        {
+            name: "Weavelight",
+            chance: 1
+        },
+        {
+            name: "Sawtooth Circlet",
+            chance: 1
+        },
+        {
+            name: "Injector Band",
+            chance: 1
+        },
+        {
+            name: "Spool Extender",
+            chance: 1
+        },
+        {
+            name: "Reserve Bind",
+            chance: 1
+        },
+        {
+            name: "Claw Mirrors",
+            chance: 1
+        },
+        {
+            name: "Memory Crystal",
+            chance: 1
+        },
+        {
+            name: "Snitch Pick",
+            chance: 1
+        },
+        {
+            name: "Volt Filament",
+            chance: 1
+        },
+        {
+            name: "Quick Sling",
+            chance: 1
+        },
+        {
+            name: "Wreath of Purity",
+            chance: 1
+        },
+        {
+            name: "Longclaw",
+            chance: 1
+        },
+        {
+            name: "Wispfire Lantern",
+            chance: 1
+        },
+        {
+            name: "Egg of Flealia",
+            chance: 1
+        },
+        {
+            name: "Pin Badge",
+            chance: 1
+        }
     ],
-    yellow: [
-        { name: "Compass", chance: 3 },
-        { name: "Shard Pendant", chance: 1 },
-        { name: "Magnetite Brooch", chance: 1 },
-        { name: "Weighted Belt", chance: 2 },
-        { name: "Barbed Bracelet", chance: 1 },
-        { name: "Dead Bug's Purse", chance: 1 },
-        { name: "Magnetite Dice", chance: 2 },
-        { name: "Scuttlebrace", chance: 2 },
-        { name: "Ascendant's Grip", chance: 2 },
-        { name: "Spider Strings", chance: 1 },
-        { name: "Silkspeed Anklets", chance: 2 },
-        { name: "Thief's Mark", chance: 1 }
+    yellow: [{
+            name: "Compass",
+            chance: 3
+        },
+        {
+            name: "Shard Pendant",
+            chance: 1
+        },
+        {
+            name: "Magnetite Brooch",
+            chance: 1
+        },
+        {
+            name: "Weighted Belt",
+            chance: 2
+        },
+        {
+            name: "Barbed Bracelet",
+            chance: 1
+        },
+        {
+            name: "Dead Bug's Purse",
+            chance: 1
+        },
+        {
+            name: "Magnetite Dice",
+            chance: 2
+        },
+        {
+            name: "Scuttlebrace",
+            chance: 2
+        },
+        {
+            name: "Ascendant's Grip",
+            chance: 2
+        },
+        {
+            name: "Spider Strings",
+            chance: 1
+        },
+        {
+            name: "Silkspeed Anklets",
+            chance: 2
+        },
+        {
+            name: "Thief's Mark",
+            chance: 1
+        }
     ]
 };
 
@@ -431,7 +600,7 @@ function getCrest() {
 const vCrest = new VariableCrest("hunter");
 
 function equip(...tools) {
-    try{
+    try {
         for (let i of tools) {
             vCrest.equip(i);
         }
@@ -541,7 +710,7 @@ function getEmpty(arr) {
     return c;
 }
 
-Utility.qs("#standardCrestTemplateToggle").addEventListener("change", e=>{
+Utility.qs("#standardCrestTemplateToggle").addEventListener("change", e => {
     SETTINGS.STANDARD_CREST_TEMPLATES = e.target.checked;
 })
 
@@ -562,64 +731,72 @@ function customCrest() {
         }
     }
 
-    const colorConstants = { 'w': ToolSlot.WHITE, 'r': ToolSlot.RED, 'b': ToolSlot.BLUE, 'y': ToolSlot.YELLOW };
-    const fullColorNames = { r: "red", b: "blue", y: "yellow", w: "white" }
+    const colorConstants = {
+        'w': ToolSlot.WHITE,
+        'r': ToolSlot.RED,
+        'b': ToolSlot.BLUE,
+        'y': ToolSlot.YELLOW
+    };
+    const fullColorNames = {
+        r: "red",
+        b: "blue",
+        y: "yellow",
+        w: "white"
+    }
     const keys = ['r', 'b', 'y', 'w'];
-	const values = [0, 1, 2, 3];
+    const values = [0, 1, 2, 3];
 
-	const toolCountScores = {
-		r: {
-			0: -1,
-			1: 1,
-			2: 2,
-			3: 3,
-		},
-		b: {
-			0: -3,
-			1: 1,
-			2: 3,
-			3: 4,
-		},
-		y: {
-			0: 0,
-			1: 1,
-			2: 2,
-			3: 2.5,
-		},
-		w: {
-			0: -2,
-			1: 1,
-			2: 3,
-			3: 3,
-		}
-	};
+    const toolCountScores = {
+        r: {
+            0: -1,
+            1: 1,
+            2: 2,
+            3: 3,
+        },
+        b: {
+            0: -3,
+            1: 1,
+            2: 3,
+            3: 4,
+        },
+        y: {
+            0: 0,
+            1: 1,
+            2: 2,
+            3: 2.5,
+        },
+        w: {
+            0: -2,
+            1: 1,
+            2: 3,
+            3: 3,
+        }
+    };
 
-	var results = [];
+    var results = [];
 
-	function generateCombos(index, currentCombo) {
-		if (index === keys.length) {
-			results.push(Object.assign({}, currentCombo));
-			return;
-		}
+    function generateCombos(index, currentCombo) {
+        if (index === keys.length) {
+            results.push(Object.assign({}, currentCombo));
+            return;
+        }
 
-		for (let val of values) {
-			currentCombo[keys[index]] = val;
-			generateCombos(index + 1, currentCombo);
-		}
-	}
+        for (let val of values) {
+            currentCombo[keys[index]] = val;
+            generateCombos(index + 1, currentCombo);
+        }
+    }
 
-	generateCombos(0, {});
-	results = results.filter(e => e.r + e.b + e.y + e.w > 4 && e.r + e.b + e.y + e.w < 8 && e.w + e.r <= 3);
-	results = results.map(e => Object.assign(e,
-		{ t: e.w + e.r + e.b + e.y },
-		{
-			score:
-				toolCountScores.w[e.w] +
-				toolCountScores.r[e.r] +
-				toolCountScores.b[e.b] +
-				toolCountScores.y[e.y]
-		}
-	));
+    generateCombos(0, {});
+    results = results.filter(e => e.r + e.b + e.y + e.w > 4 && e.r + e.b + e.y + e.w < 8 && e.w + e.r <= 3);
+    results = results.map(e => Object.assign(e, {
+        t: e.w + e.r + e.b + e.y
+    }, {
+        score: toolCountScores.w[e.w] +
+            toolCountScores.r[e.r] +
+            toolCountScores.b[e.b] +
+            toolCountScores.y[e.y]
+    }));
 
 
     const randomCrest = Utility.arrayRandom(results);
@@ -655,7 +832,7 @@ function customCrest() {
         y: 0,
         w: 0
     };
-    
+
     try {
         for (let i of keys) {
             console.log(fullColorNames[i], i, data.slots[fullColorNames[i]]);
@@ -663,19 +840,18 @@ function customCrest() {
                 if (["r", "w"].includes(i)) {
                     slots_filled.r++;
                     slots_filled.w++
-                } 
-                else if (i == "b") slots_filled.b++;
+                } else if (i == "b") slots_filled.b++;
                 else if (i == "y") slots_filled.y++;
-                
+
                 var coordinateIndex = slots_filled[i] - 1;
 
 
                 // switching to match w/r/w order in that case
                 if (randomCrest.r == 2 && randomCrest.w == 1) {
-                    if (i == "r" && x == 1) 
-                        coordinateIndex++; 
-                    else if (i == "w" && x == 0) 
-                        coordinateIndex--;   
+                    if (i == "r" && x == 1)
+                        coordinateIndex++;
+                    else if (i == "w" && x == 0)
+                        coordinateIndex--;
                 }
 
 

@@ -150,7 +150,9 @@ class VariableCrest {
         }
     }
 
-    static TEMPLATES = Object.assign({}, ...Object.keys(this.CREST_DATA).map(crest => ({ [crest]: Object.keys(this.CREST_DATA[crest].slots).map(e => this.CREST_DATA[crest].slots[e].length) })));
+    static TEMPLATES = Object.assign({}, ...Object.keys(this.CREST_DATA).map(crest => ({
+        [crest]: Object.keys(this.CREST_DATA[crest].slots).map(e => this.CREST_DATA[crest].slots[e].length)
+    })));
 
     constructor(name) {
         this.custom = false;
@@ -170,7 +172,10 @@ class VariableCrest {
         this.crest = name;
         this.empty = true;
         this.slots = {};
-        [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = VariableCrest.TEMPLATES[name].map(e => ({ count: e, slots: new Array(e) }));
+        [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = VariableCrest.TEMPLATES[name].map(e => ({
+            count: e,
+            slots: new Array(e)
+        }));
 
         // alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white]));
 
@@ -183,7 +188,7 @@ class VariableCrest {
         this.custom = true;
         this.customSet = data;
 
-        
+
         if (this.slots)
             for (let i of Object.keys(TOOL_DATA))
                 for (let tool of TOOL_DATA[i])
@@ -193,10 +198,13 @@ class VariableCrest {
         this.empty = true;
         this.slots = {};
 
-        [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = Object.keys(data.slots).map(color => data.slots[color].length).map(e => ({ count: e, slots: new Array(e) }));
+        [this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white] = Object.keys(data.slots).map(color => data.slots[color].length).map(e => ({
+            count: e,
+            slots: new Array(e)
+        }));
 
 
-        alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white].map(e => e.count )));
+        alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white].map(e => e.count)));
 
         sound && (CREST_CHANGE_AUDIO.pause(), CREST_CHANGE_AUDIO.currentTime = 0, CREST_CHANGE_AUDIO.play());
         Utility.qs("#crest-img").src = "/silksong-challenges/images/crests/custom.png";
@@ -209,7 +217,9 @@ class VariableCrest {
 
 
         if (index != -1 || (index == -1 && slotTypeCapacity == 1)) {
-            if (this.slots[type].slots.includes(tool)) { return; }
+            if (this.slots[type].slots.includes(tool)) {
+                return;
+            }
 
 
             var audio = (type != ToolSlot.WHITE ? TOOL_EQUIP_AUDIO : SILK_SKILL_EQUIP_AUDIO);
@@ -279,8 +289,9 @@ class VariableCrest {
     unequip(tool) {
         var type = TOOL_TYPES[tool];
         var index = this.slots[type].slots.indexOf(tool);
-        if (index == -1) { /* console.warn(tool + " is not equipped!"); */ }
-        else {
+        if (index == -1) {
+            /* console.warn(tool + " is not equipped!"); */
+        } else {
             this.slots[type].slots[index] = null;
 
             if (-1 == this.getAllEquipped().findIndex(e => !!e))
