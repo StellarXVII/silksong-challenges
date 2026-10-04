@@ -618,11 +618,16 @@ function unequip(...tools) {
 var changedCrest = false;
 
 Utility.qs("#randomCrest").addEventListener("click", () => {
-    changedCrest = true;
-    var temp = Object.keys(VariableCrest.CREST_DATA);
-    if (changedCrest)
-        temp.splice(temp.indexOf(vCrest.crest), 1);
-    setCrestByName(Utility.arrayRandom(temp));
+    if (SETTINGS.STANDARD_CREST_TEMPLATES) {
+        changedCrest = true;
+        var temp = Object.keys(VariableCrest.CREST_DATA);
+        if (changedCrest)
+            temp.splice(temp.indexOf(vCrest.crest), 1);
+        setCrestByName(Utility.arrayRandom(temp));
+    }
+    else {
+        setCrestWithData(exampleCustomCrest);
+    }
 })
 
 function setCrestWithData(data) {
@@ -875,13 +880,6 @@ if (randomCrest.r == 2 && randomCrest.w == 1) {
 const exampleCustomCrest = customCrest();
 
 // alert(JSON.stringify(exampleCustomCrest));
-
-try {
-    setCrestWithData(exampleCustomCrest);
-} catch (e) {
-    alert(e);
-}
-
 
 /* 
 
