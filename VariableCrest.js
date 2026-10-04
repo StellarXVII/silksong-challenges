@@ -204,7 +204,7 @@ class VariableCrest {
         }));
 
 
-        alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white].map(e => e.count)));
+        // alert(JSON.stringify([this.slots.red, this.slots.blue, this.slots.yellow, this.slots.white].map(e => e.count)));
 
         sound && (CREST_CHANGE_AUDIO.pause(), CREST_CHANGE_AUDIO.currentTime = 0, CREST_CHANGE_AUDIO.play());
         Utility.qs("#crest-img").src = "/silksong-challenges/images/crests/custom.png";
