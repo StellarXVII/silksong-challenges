@@ -626,7 +626,7 @@ Utility.qs("#randomCrest").addEventListener("click", () => {
         setCrestByName(Utility.arrayRandom(temp));
     }
     else {
-        setCrestWithData(exampleCustomCrest);
+        setCrestWithData(customCrest());
     }
 })
 
@@ -876,8 +876,6 @@ if (randomCrest.r == 2 && randomCrest.w == 1) {
     [data.slots.red[1]]
 } */
 
-
-const exampleCustomCrest = customCrest();
 
 // alert(JSON.stringify(exampleCustomCrest));
 
