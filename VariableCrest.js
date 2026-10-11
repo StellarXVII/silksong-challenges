@@ -218,9 +218,15 @@ class VariableCrest {
         Utility.qs("#crest-moveset-container").style.display = "block";
         Utility.qs("#controlBar").style.height = "32%";
         
+        const altNames = {
+            "beast": " (Warrior)",
+            "architect": " (Toolmaster)",
+            "shaman": " (Spell)"
+        }
+
         Utility.qsa(".randomized-moveset-field").forEach(e => {
             let crest = Utility.arrayRandom(Object.keys(VariableCrest.CREST_DATA));
-            e.textContent = crest[0].toUpperCase() + crest.substring(1);
+            e.textContent = crest[0].toUpperCase() + crest.substring(1) + (altNames[crest] || "");
         })
     }
 
