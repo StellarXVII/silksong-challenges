@@ -205,3 +205,17 @@ label {
 #crest-moveset-container {
     display: none;
 }
+
+div#crest-moveset-container span {
+    color: white;
+    display: inline-block;
+}
+
+div#crest-moveset-container {
+    height: min-content;
+    color: white;
+}
+
+span.randomized-moveset-field {
+    font-weight: 800;
+}
