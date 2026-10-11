@@ -225,6 +225,8 @@ class VariableCrest {
     }
 
     equip(tool) {
+        timedProcessFinished = false;
+
         var type = TOOL_TYPES[tool];
         var index = this.slots[type].slots.findIndex(e => !e);
         var slotTypeCapacity = this.slots[type].slots.length;
@@ -265,6 +267,7 @@ class VariableCrest {
             icon.style.top = iconRect.y + "px";
             icon.style.left = iconRect.x + "px";
 
+            
             setTimeout(() => {
                 icon.style.transition = "";
                 // ----------------------- removed because now position: fixed;
@@ -294,6 +297,7 @@ class VariableCrest {
                             outline.style.transform = "translate(-50%, calc(-50% + 4px))"; // is already -50%, -50%
                         }
                     }
+                    timedProcessFinished = true;
                 }, 250);
             }, 50);
 
@@ -301,6 +305,8 @@ class VariableCrest {
     }
 
     unequip(tool) {
+        timedProcessFinished = false;
+        
         var type = TOOL_TYPES[tool];
         var index = this.slots[type].slots.indexOf(tool);
         if (index == -1) {
@@ -328,6 +334,7 @@ class VariableCrest {
                     icon.style.left = "";
                     icon.style.position = "relative";
                     icon.style.width = "";
+                    timedProcessFinished = true;
                 }, 250);
             }, 100);
         }

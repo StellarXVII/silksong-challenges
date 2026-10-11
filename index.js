@@ -239,6 +239,10 @@ const BOSS_DATA = {
     },
 }
 
+
+var timedProcessFinished = true;
+
+
 for (let i of Object.keys(BOSS_DATA)) {
     new Image(BOSS_DATA[i].image);
 }
@@ -620,6 +624,10 @@ function unequip(...tools) {
 var changedCrest = false;
 
 Utility.qs("#randomCrest").addEventListener("click", () => {
+
+    if (!timedProcessFinished)
+        return;
+
     if (SETTINGS.STANDARD_CREST_TEMPLATES) {
         changedCrest = true;
 
@@ -639,6 +647,9 @@ function setCrestWithData(data) {
 
 
 Utility.qs("#randomTools").addEventListener("click", () => {
+
+    if (!timedProcessFinished)
+        return;
 
     var delay = 0;
     if (!vCrest.empty) {
