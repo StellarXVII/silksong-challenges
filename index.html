@@ -25,8 +25,22 @@
     </div>
 
     <div id="controlBar">
-        <div style="padding: 0 40px;">
-            <button id="randomAll" style="width: calc(130px + 130px + 10px);">All</button>
+        <div id="crest-moveset-container">
+            <div class="randomized-field-container"><span class="moveset-field-label"
+                    id="moveset-normal-label">NeutralAttack:&nbsp;&nbsp;</span><span class="randomized-moveset-field"
+                    id="moveset-normal">Hunter</span></div>
+            <div class="randomized-field-container"><span class="moveset-field-label"
+                    id="moveset-up-label">UpAttack:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                    class="randomized-moveset-field" id="moveset-up">Hunter</span></div>
+            <div class="randomized-field-container"><span class="moveset-field-label"
+                    id="moveset-pogo-label">DownAttack:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                    class="randomized-moveset-field" id="moveset-pogo">Hunter</span></div>
+            <div class="randomized-field-container"><span class="moveset-field-label"
+                    id="moveset-bind-action-label">BindingAction:&nbsp;&nbsp;</span><span
+                    class="randomized-moveset-field" id="bind-action">Hunter</span></div>
+        </div>
+        <div id="controlBarButtonsDiv">
+            <button id="randomAll" style="width: 100%">All</button>
             <button id="randomBoss">Boss</button>
             <button id="randomCrest">Crest</button>
             <button id="randomTools">Tools</button>

@@ -182,6 +182,12 @@ class VariableCrest {
         sound && (CREST_CHANGE_AUDIO.pause(), CREST_CHANGE_AUDIO.currentTime = 0, CREST_CHANGE_AUDIO.play());
         Utility.qs("#crest-img").src = VariableCrest.CREST_DATA[name].image;
 
+        Utility.qs("#crest-moveset-container").style.display = "";
+        Utility.qs("#controlBar").style.width = "22%";
+        Utility.qsa(".randomized-moveset-field").forEach(e => {
+            e.textContent = "";
+        })
+
     }
 
     setCrestWithData(data, sound = true) {
@@ -208,6 +214,14 @@ class VariableCrest {
 
         sound && (CREST_CHANGE_AUDIO.pause(), CREST_CHANGE_AUDIO.currentTime = 0, CREST_CHANGE_AUDIO.play());
         Utility.qs("#crest-img").src = "/silksong-challenges/images/crests/custom.png";
+
+        Utility.qs("#crest-moveset-container").style.display = "block";
+        Utility.qs("#controlBar").style.width = "32%";
+        
+        Utility.qsa(".randomized-moveset-field").forEach(e => {
+            let crest = Utility.arrayRandom(Object.keys(VariableCrest.CREST_DATA));
+            e.textContent = crest[0].toUpperCase() + crest.substring(1);
+        })
     }
 
     equip(tool) {

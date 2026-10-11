@@ -174,17 +174,17 @@ div#controlBar {
     bottom: 0;
     left: 33.33%;
     width: 33.33vw;
-    height: 22%;
+    height: 32%;
     background: black;
     border: solid white 3px;
     border-bottom: none;
     box-sizing: border-box;
-    padding: 0 40px;
+    padding: 30px 40px 0 40px;
     z-index: 10;
     border-radius: 20px 20px 0 0;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
@@ -205,14 +205,26 @@ div#controlBar button:hover {
     background-color: hsl(0, 0%, 50%);
 }
 
-#controlBar div {
+#controlBarButtonsDiv {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    height: min-content;
+    position: absolute;
+    width: 330px;
+    bottom: 30px;
 }
 
 label {
     color: white;
+}
+
+#controlBarButtonsDiv {
+    padding: 0 40px;
+}
+
+#crest-moveset-container {
+    display: none;
 }
