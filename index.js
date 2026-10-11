@@ -662,7 +662,7 @@ Utility.qs("#randomBoss").addEventListener("click", () => {
     audio.currentTime = 0;
     audio.play();
 
-    if (BOSSES_LEFT.length) // replenish
+    if (BOSSES_LEFT.length == 0) // replenish
         BOSSES_LEFT = Object.keys(BOSS_DATA);
     
     var boss = Utility.arrayRandom(BOSSES_LEFT);
