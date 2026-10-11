@@ -2,6 +2,8 @@ const SETTINGS = {
     STANDARD_CREST_TEMPLATES: true
 };
 
+var BOSSES_LEFT = Object.keys(BOSS_DATA);
+
 const CREST_CHANGE_AUDIO = new Audio("/silksong-challenges/audio/UI crest change select.wav");
 const TOOL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip.wav");
 const SILK_SKILL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip white tool.wav");
@@ -620,9 +622,10 @@ var changedCrest = false;
 Utility.qs("#randomCrest").addEventListener("click", () => {
     if (SETTINGS.STANDARD_CREST_TEMPLATES) {
         changedCrest = true;
+
         var temp = Object.keys(VariableCrest.CREST_DATA);
-        if (changedCrest)
-            temp.splice(temp.indexOf(vCrest.crest), 1);
+        temp.splice(temp.indexOf(vCrest.crest), 1);
+
         setCrestByName(Utility.arrayRandom(temp));
     }
     else {
@@ -658,7 +661,12 @@ Utility.qs("#randomBoss").addEventListener("click", () => {
     audio.pause();
     audio.currentTime = 0;
     audio.play();
-    var boss = Utility.arrayRandom(Object.keys(BOSS_DATA));
+
+    if (BOSSES_LEFT.length) // replenish
+        BOSSES_LEFT = Object.keys(BOSS_DATA);
+    
+    var boss = Utility.arrayRandom(BOSSES_LEFT);
+    BOSSES_LEFT.splice(BOSSES_LEFT.indexOf(boss), 1);
     var img = Utility.qs("#boss-img")
     img.src = BOSS_DATA[boss].image;
     img.alt = boss;
