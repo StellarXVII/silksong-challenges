@@ -234,6 +234,7 @@ class VariableCrest {
 
         if (index != -1 || (index == -1 && slotTypeCapacity == 1)) {
             if (this.slots[type].slots.includes(tool)) {
+                timedProcessFinished = true;
                 return;
             }
 
@@ -306,11 +307,12 @@ class VariableCrest {
 
     unequip(tool) {
         timedProcessFinished = false;
-        
+
         var type = TOOL_TYPES[tool];
         var index = this.slots[type].slots.indexOf(tool);
         if (index == -1) {
             /* console.warn(tool + " is not equipped!"); */
+            timedProcessFinished = true;
         } else {
             this.slots[type].slots[index] = null;
 
