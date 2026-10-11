@@ -2,8 +2,6 @@ const SETTINGS = {
     STANDARD_CREST_TEMPLATES: true
 };
 
-var BOSSES_LEFT = Object.keys(BOSS_DATA);
-
 const CREST_CHANGE_AUDIO = new Audio("/silksong-challenges/audio/UI crest change select.wav");
 const TOOL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip.wav");
 const SILK_SKILL_EQUIP_AUDIO = new Audio("/silksong-challenges/audio/ui tool equip white tool.wav");
@@ -244,6 +242,8 @@ const BOSS_DATA = {
 for (let i of Object.keys(BOSS_DATA)) {
     new Image(BOSS_DATA[i].image);
 }
+
+var BOSSES_LEFT = Object.keys(BOSS_DATA);
 
 const TOOL_DATA = {
     white: [{
