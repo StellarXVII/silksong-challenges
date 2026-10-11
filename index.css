@@ -57,29 +57,6 @@ h2#boss-text {
     left: 25.83500%;
 }
 
-#crest-img {
-    /* max-width: 100%; */
-    /* max-height: 100%; */
-    /* position: absolute; */
-    /* centering */
-    /* left: 50%; */
-    /* centering */
-    /* transform: translateX(-50%); */
-    /* centering */
-    /* left: 0; */
-    /* top: 50%; */
-    /* transform: translate(0, -60%); */
-}
-
-#vesticrest-img {
-    /* position: absolute; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
-    /* left: 0; */
-    /* top: 50%; */
-    /* transform: translate(-110%, -70%); */
-}
-
 #crest-container div {
     display: flex;
     align-items: center;

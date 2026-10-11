@@ -183,7 +183,7 @@ class VariableCrest {
         Utility.qs("#crest-img").src = VariableCrest.CREST_DATA[name].image;
 
         Utility.qs("#crest-moveset-container").style.display = "";
-        Utility.qs("#controlBar").style.width = "22%";
+        Utility.qs("#controlBar").style.height = "22%";
         Utility.qsa(".randomized-moveset-field").forEach(e => {
             e.textContent = "";
         })
@@ -216,7 +216,7 @@ class VariableCrest {
         Utility.qs("#crest-img").src = "/silksong-challenges/images/crests/custom.png";
 
         Utility.qs("#crest-moveset-container").style.display = "block";
-        Utility.qs("#controlBar").style.width = "32%";
+        Utility.qs("#controlBar").style.height = "32%";
         
         Utility.qsa(".randomized-moveset-field").forEach(e => {
             let crest = Utility.arrayRandom(Object.keys(VariableCrest.CREST_DATA));
